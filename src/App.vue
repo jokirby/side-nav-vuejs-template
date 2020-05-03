@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <SideNav :mobile="mobile"/>
-    <router-view/>
+    <router-view class="current-view"/>
   </div>
 </template>
 
@@ -38,7 +38,14 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  width: 100%;
+  height: 100vh;
+}
+
 #app {
+  height: 100%;
+  width: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,6 +63,16 @@ export default {
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+
+.current-view {
+  height: 100%;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: calc(100% - 320px);
+    margin-left: 320px;
   }
 }
 </style>
