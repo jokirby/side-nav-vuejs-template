@@ -1,4 +1,4 @@
-# ira-portfolio-site
+# side-nav VueJS Template
 
 ## Project setup
 ```
