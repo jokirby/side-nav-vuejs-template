@@ -1,28 +1,20 @@
 <template>
   <div id="app">
-    <div>
-      <b-nav>
-        <b-nav-item active>Active</b-nav-item>
-        <b-nav-item>Link</b-nav-item>
-        <b-nav-item>Another Link</b-nav-item>
-        <b-nav-item disabled>Disabled</b-nav-item>
-      </b-nav>
-    </div>
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <NavBar/>
+    <SideNav/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
+import SideNav from '@/components/SideNav'
 export default {
   name: 'App',
   components: {
-    NavBar
+    SideNav
   },
   mixins: [],
   data () {
