@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <SideNav/>
+    <SideNav :mobile="mobile"/>
     <router-view/>
   </div>
 </template>
@@ -18,11 +14,25 @@ export default {
   },
   mixins: [],
   data () {
-    return {}
+    return {
+      windowWidth: window.screen.width
+    }
   },
-  computed: {},
-  created () {},
-  methods: {},
+  computed: {
+    mobile () {
+      return this.windowWidth < 768
+    }
+  },
+  methods: {
+    addWindowEventListener () {
+      window.addEventListener('resize', (e) => {
+        this.windowWidth = e.target.screen.width
+      })
+    }
+  },
+  mounted () {
+    this.addWindowEventListener()
+  },
   watch: {}
 }
 </script>
